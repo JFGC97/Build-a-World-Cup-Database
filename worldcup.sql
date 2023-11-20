@@ -16,6 +16,29 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+DROP DATABASE worldcup;
+--
+-- Name: worldcup; Type: DATABASE; Schema: -; Owner: freecodecamp
+--
+
+CREATE DATABASE worldcup WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'C.UTF-8' LC_CTYPE = 'C.UTF-8';
+
+
+ALTER DATABASE worldcup OWNER TO freecodecamp;
+
+\connect worldcup
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -111,72 +134,68 @@ ALTER TABLE ONLY public.teams ALTER COLUMN team_id SET DEFAULT nextval('public.t
 -- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.games (game_id, year, round, winner_goals, opponent_goals, winner_id, opponent_id) FROM stdin;
-194	2018	Final	4	2	383	384
-195	2018	Third Place	2	0	385	386
-196	2018	Semi-Final	2	1	384	386
-197	2018	Semi-Final	1	0	383	385
-198	2018	Quarter-Final	3	2	384	387
-199	2018	Quarter-Final	2	0	386	388
-200	2018	Quarter-Final	2	1	385	389
-201	2018	Quarter-Final	2	0	383	390
-202	2018	Eighth-Final	2	1	386	391
-203	2018	Eighth-Final	1	0	388	392
-204	2018	Eighth-Final	3	2	385	393
-205	2018	Eighth-Final	2	0	389	394
-206	2018	Eighth-Final	2	1	384	395
-207	2018	Eighth-Final	2	1	387	396
-208	2018	Eighth-Final	2	1	390	397
-209	2018	Eighth-Final	4	3	383	398
-210	2014	Final	1	0	399	398
-211	2014	Third Place	3	0	400	389
-212	2014	Semi-Final	1	0	398	400
-213	2014	Semi-Final	7	1	399	389
-214	2014	Quarter-Final	1	0	400	401
-215	2014	Quarter-Final	1	0	398	385
-216	2014	Quarter-Final	2	1	389	391
-217	2014	Quarter-Final	1	0	399	383
-218	2014	Eighth-Final	2	1	389	402
-219	2014	Eighth-Final	2	0	391	390
-220	2014	Eighth-Final	2	0	383	403
-221	2014	Eighth-Final	2	1	399	404
-222	2014	Eighth-Final	2	1	400	394
-223	2014	Eighth-Final	2	1	401	405
-224	2014	Eighth-Final	1	0	398	392
-225	2014	Eighth-Final	2	1	385	406
-\.
+INSERT INTO public.games VALUES (194, 2018, 'Final', 4, 2, 383, 384);
+INSERT INTO public.games VALUES (195, 2018, 'Third Place', 2, 0, 385, 386);
+INSERT INTO public.games VALUES (196, 2018, 'Semi-Final', 2, 1, 384, 386);
+INSERT INTO public.games VALUES (197, 2018, 'Semi-Final', 1, 0, 383, 385);
+INSERT INTO public.games VALUES (198, 2018, 'Quarter-Final', 3, 2, 384, 387);
+INSERT INTO public.games VALUES (199, 2018, 'Quarter-Final', 2, 0, 386, 388);
+INSERT INTO public.games VALUES (200, 2018, 'Quarter-Final', 2, 1, 385, 389);
+INSERT INTO public.games VALUES (201, 2018, 'Quarter-Final', 2, 0, 383, 390);
+INSERT INTO public.games VALUES (202, 2018, 'Eighth-Final', 2, 1, 386, 391);
+INSERT INTO public.games VALUES (203, 2018, 'Eighth-Final', 1, 0, 388, 392);
+INSERT INTO public.games VALUES (204, 2018, 'Eighth-Final', 3, 2, 385, 393);
+INSERT INTO public.games VALUES (205, 2018, 'Eighth-Final', 2, 0, 389, 394);
+INSERT INTO public.games VALUES (206, 2018, 'Eighth-Final', 2, 1, 384, 395);
+INSERT INTO public.games VALUES (207, 2018, 'Eighth-Final', 2, 1, 387, 396);
+INSERT INTO public.games VALUES (208, 2018, 'Eighth-Final', 2, 1, 390, 397);
+INSERT INTO public.games VALUES (209, 2018, 'Eighth-Final', 4, 3, 383, 398);
+INSERT INTO public.games VALUES (210, 2014, 'Final', 1, 0, 399, 398);
+INSERT INTO public.games VALUES (211, 2014, 'Third Place', 3, 0, 400, 389);
+INSERT INTO public.games VALUES (212, 2014, 'Semi-Final', 1, 0, 398, 400);
+INSERT INTO public.games VALUES (213, 2014, 'Semi-Final', 7, 1, 399, 389);
+INSERT INTO public.games VALUES (214, 2014, 'Quarter-Final', 1, 0, 400, 401);
+INSERT INTO public.games VALUES (215, 2014, 'Quarter-Final', 1, 0, 398, 385);
+INSERT INTO public.games VALUES (216, 2014, 'Quarter-Final', 2, 1, 389, 391);
+INSERT INTO public.games VALUES (217, 2014, 'Quarter-Final', 1, 0, 399, 383);
+INSERT INTO public.games VALUES (218, 2014, 'Eighth-Final', 2, 1, 389, 402);
+INSERT INTO public.games VALUES (219, 2014, 'Eighth-Final', 2, 0, 391, 390);
+INSERT INTO public.games VALUES (220, 2014, 'Eighth-Final', 2, 0, 383, 403);
+INSERT INTO public.games VALUES (221, 2014, 'Eighth-Final', 2, 1, 399, 404);
+INSERT INTO public.games VALUES (222, 2014, 'Eighth-Final', 2, 1, 400, 394);
+INSERT INTO public.games VALUES (223, 2014, 'Eighth-Final', 2, 1, 401, 405);
+INSERT INTO public.games VALUES (224, 2014, 'Eighth-Final', 1, 0, 398, 392);
+INSERT INTO public.games VALUES (225, 2014, 'Eighth-Final', 2, 1, 385, 406);
 
 
 --
 -- Data for Name: teams; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-COPY public.teams (team_id, name) FROM stdin;
-383	France
-384	Croatia
-385	Belgium
-386	England
-387	Russia
-388	Sweden
-389	Brazil
-390	Uruguay
-391	Colombia
-392	Switzerland
-393	Japan
-394	Mexico
-395	Denmark
-396	Spain
-397	Portugal
-398	Argentina
-399	Germany
-400	Netherlands
-401	Costa Rica
-402	Chile
-403	Nigeria
-404	Algeria
-405	Greece
-406	United States
-\.
+INSERT INTO public.teams VALUES (383, 'France');
+INSERT INTO public.teams VALUES (384, 'Croatia');
+INSERT INTO public.teams VALUES (385, 'Belgium');
+INSERT INTO public.teams VALUES (386, 'England');
+INSERT INTO public.teams VALUES (387, 'Russia');
+INSERT INTO public.teams VALUES (388, 'Sweden');
+INSERT INTO public.teams VALUES (389, 'Brazil');
+INSERT INTO public.teams VALUES (390, 'Uruguay');
+INSERT INTO public.teams VALUES (391, 'Colombia');
+INSERT INTO public.teams VALUES (392, 'Switzerland');
+INSERT INTO public.teams VALUES (393, 'Japan');
+INSERT INTO public.teams VALUES (394, 'Mexico');
+INSERT INTO public.teams VALUES (395, 'Denmark');
+INSERT INTO public.teams VALUES (396, 'Spain');
+INSERT INTO public.teams VALUES (397, 'Portugal');
+INSERT INTO public.teams VALUES (398, 'Argentina');
+INSERT INTO public.teams VALUES (399, 'Germany');
+INSERT INTO public.teams VALUES (400, 'Netherlands');
+INSERT INTO public.teams VALUES (401, 'Costa Rica');
+INSERT INTO public.teams VALUES (402, 'Chile');
+INSERT INTO public.teams VALUES (403, 'Nigeria');
+INSERT INTO public.teams VALUES (404, 'Algeria');
+INSERT INTO public.teams VALUES (405, 'Greece');
+INSERT INTO public.teams VALUES (406, 'United States');
 
 
 --
