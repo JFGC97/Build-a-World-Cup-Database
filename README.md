@@ -4,7 +4,7 @@ games.csv - raw data
 
 Wordcup.sql - database dump;
 
-* All tasks solved in this database dump
+* All tasks below were solved in this database dump
   
   You should create a database named worldcup
   
@@ -23,7 +23,7 @@ Wordcup.sql - database dump;
 insert_data.sh - Script for adding data to SQL tables;
 queries.sh - Script to display queries in the Bash terminal;
 
-* All tasks solved in this script's
+* All tasks below were solved in this script's
   
   Your two script (.sh) files should have executable permissions. Other tests involving these two files will fail until permissions are correct. When these permissions are enabled, the tests will take 
 significantly longer to run
